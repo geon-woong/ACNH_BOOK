@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>Home</h1>
+      <img src="../assets/image/ACNHbg.png" alt="background-image">
   </div>
 </template>
 
@@ -10,6 +10,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  img{
+    width: 100vw;
+    height: 100vh;
+  }
 </style>

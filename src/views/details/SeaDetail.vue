@@ -1,9 +1,27 @@
 <template>
-  <div>해산물디테일</div>
-  <p>
-  {{seaDetail.name["name-KRko"]}}
-  </p>
-  <img :src="seaDetail.image_uri" alt="">
+  <div class="detail-wrap">
+      <router-link to="/sea" >
+        <i class="fas fa-arrow-left"></i>
+        돌아가기
+      </router-link>
+      <div class="row mt-2">
+        <div class="col-6">
+          <h5>
+          {{ seaDetail.name["name-KRko"] }}  
+          </h5>
+          <img :src="seaDetail.image_uri" alt="fish-detail" style="width:inherit;height:377px;padding:50px">
+        </div>
+        <div class="col-6">
+          <p> 북반구 출현 기간 : {{ seaAvailability["month-northern"]}} 월</p>
+          <p> 남반구 출현 기간 : {{ seaAvailability["month-southern"]}} 월</p>
+          <p> 시간대 : {{ seaAvailability["time"]}} </p>
+          <p> 장소 : {{ seaAvailability["location"]}}</p>
+          <p> 희귀도 : {{ seaAvailability["rarity"]}}</p>
+          <p> 크기 : {{ seaDetail["shadow"]}}</p>
+          <p> 가격 : {{ seaDetail["price"]}}벨</p>
+        </div>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -15,7 +33,10 @@ export default {
   computed: {
     seaDetail() {
       return this.$store.state.sea_detail;
-    }
+    },
+    seaAvailability() {
+      return this.$store.state.sea_detail.availability;
+    },
   },
 }
 </script>

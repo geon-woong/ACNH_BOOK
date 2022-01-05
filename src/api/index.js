@@ -30,4 +30,6 @@ function fetchSeaDetail(contentId ){
   return axios.get(`${config.baseUrl}/sea/${contentId}`)
 }
 
+
+
   export { fetchFish ,fetchBugs,fetchSea, fetchFossils ,fetchFishDetail,fetchBugDetail,fetchSeaDetail }

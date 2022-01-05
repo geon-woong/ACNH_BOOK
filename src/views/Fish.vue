@@ -1,14 +1,11 @@
 <template>
 <div style="display: flex;flex-wrap:wrap; justify-content:center">
   <div v-for="(item,index) in fishes" :key="index">
-    <div class="card" style="width: 10rem; padding:10px;height:250px">
+    <div class="card" >
       <img :src="fishes[index].icon_uri" alt="icon-image" class="card-img-top" >
       <div class="card-body">
-        <p class="card-text" style="margin-bottom:0;">
-            {{ fishes[index].name["name-KRko"] }}
-        </p>
-        
-        <small><router-link :to="`/fish/${fishes[index].id}`">details</router-link></small>
+        <p class="card-text" style="margin-bottom:0;">{{ fishes[index].name["name-KRko"] }}</p>
+        <router-link :to="`/fish/${fishes[index].id}`" class="card-link"></router-link>
       </div>
     </div>
   </div>
@@ -37,4 +34,8 @@ export default {
 
 <style>
 
+.card-link{
+    position: absolute;top: 0;left: 0;
+    width: 100%;height: 100%;
+}
 </style>

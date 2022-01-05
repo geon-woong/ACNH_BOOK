@@ -1,13 +1,13 @@
 <template>
 <div style="display: flex;flex-wrap:wrap; justify-content:center">
   <div v-for="(item,index) in bugs" :key="index">
-    <div class="card" style="width: 10rem; padding:10px;height:250px">
+    <div class="card" >
       <img :src="bugs[index].icon_uri" alt="icon-image" class="card-img-top" >
       <div class="card-body">
-        <p class="card-text" style="text-align:center;margin-bottom:0;">
+        <p class="card-text">
             {{ bugs[index].name["name-KRko"] }}
         </p>
-        <router-link :to="`/bug/${bugs[index].id}`">details</router-link>
+        <router-link :to="`/bug/${bugs[index].id}`" class="card-link"></router-link>
       </div>
     </div>
       <!-- <img :src="fishes[index].image_uri" alt=""> -->
