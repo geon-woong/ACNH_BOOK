@@ -15,8 +15,6 @@
           <p> 북반구 출현 기간 : {{ seaAvailability["month-northern"]}} 월</p>
           <p> 남반구 출현 기간 : {{ seaAvailability["month-southern"]}} 월</p>
           <p> 시간대 : {{ seaAvailability["time"]}} </p>
-          <p> 장소 : {{ seaAvailability["location"]}}</p>
-          <p> 희귀도 : {{ seaAvailability["rarity"]}}</p>
           <p> 크기 : {{ seaDetail["shadow"]}}</p>
           <p> 가격 : {{ seaDetail["price"]}}벨</p>
         </div>

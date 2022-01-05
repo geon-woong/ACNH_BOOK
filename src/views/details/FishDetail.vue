@@ -7,7 +7,7 @@
       <div class="row mt-2">
         <div class="col-6">
           <h5>
-          {{ fishDetail.name["name-KRko"] }}  
+          {{ this.$store.state.fish_detail.name["name-KRko"] }}  
           </h5>
           <img :src="fishDetail.image_uri" alt="fish-detail" style="width:inherit">
         </div>
@@ -29,7 +29,7 @@ export default {
 created () {
   const contentId = this.$route.params.id
   this.$store.dispatch('FETCH_FISH_DETAIL', contentId)
-  
+  console.log(this.fishAvailability)
 },
 computed: {
   fishDetail() {

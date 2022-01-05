@@ -17,7 +17,6 @@
           <p> 시간대 : {{ bugAvailability["time"]}} </p>
           <p> 장소 : {{ bugAvailability["location"]}}</p>
           <p> 희귀도 : {{ bugAvailability["rarity"]}}</p>
-          <p> 크기 : {{ bugDetail["shadow"]}}</p>
           <p> 가격 : {{ bugDetail["price"]}}벨</p>
         </div>
       </div>

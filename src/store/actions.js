@@ -1,70 +1,40 @@
 import { fetchFish,fetchBugs,fetchSea,fetchFossils,fetchFishDetail,fetchBugDetail,fetchSeaDetail} from '../api/index'
 
 export default {
-    FETCH_FISHES({commit}) {
-        fetchFish()
-        .then(({data}) =>{
-            commit('SET_FISHES',data);
-        })
-        .catch(error=>{
-            console.log(error)
-        });
+    async FETCH_FISHES({commit}) {
+        const response = await fetchFish()
+            commit('SET_FISHES',response.data);
+            return response;
     },
-    FETCH_BUGS({commit}){
-        fetchBugs()
-        .then(({data}) => {
-            commit('SET_BUGS',data);
-        })
-        .catch(error =>{
-            console.log(error)
-        });
+    async FETCH_BUGS({commit}){
+        const response = await fetchBugs()
+        commit('SET_BUGS',response.data);
+        return response;
     },
-    FETCH_FOSSILS({commit}){
-        fetchFossils()
-        .then(({data}) => {
-            console.log('성공')
-            commit('SET_FOSSILS',data);
-        })
-        .catch(error =>{
-            console.log(error)
-        });
+    async FETCH_FOSSILS({commit}){
+        const response = await fetchFossils()
+            commit('SET_FOSSILS',response.data);
+            return response;
     },
-    FETCH_SEA({commit}){
-        fetchSea()
-        .then(({data}) => {
-            console.log('성공')
-            commit('SET_SEA',data);
-        })
-        .catch(error =>{
-            console.log(error)
-        });
+    async FETCH_SEA({commit}){
+        const response = await fetchSea()
+            commit('SET_SEA',response.data);
+            return response;
     },
 
-    FETCH_FISH_DETAIL({commit},contentId){
-        fetchFishDetail(contentId)
-        .then(({data}) => {
-            commit('SET_FISH_DETAIL',data);
-        })
-        .catch(error => {
-            console.log(error)
-        })
+   async FETCH_FISH_DETAIL({commit},contentId){
+       const response = await fetchFishDetail(contentId)
+            commit('SET_FISH_DETAIL',response.data);
+            return response;
     },
-    FETCH_BUG_DETAIL({commit},contentId){
-        fetchBugDetail(contentId)
-        .then(({data}) => {
-            commit('SET_BUG_DETAIL',data);
-        })
-        .catch(error => {
-            console.log(error)
-        })
+    async FETCH_BUG_DETAIL({commit},contentId){
+        const response = await fetchBugDetail(contentId)
+            commit('SET_BUG_DETAIL',response.data);
+            return response;
     },
-    FETCH_SEA_DETAIL({commit},contentId){
-        fetchSeaDetail(contentId)
-        .then(({data}) => {
-            commit('SET_SEA_DETAIL',data);
-        })
-        .catch(error => {
-            console.log(error)
-        })
+    async FETCH_SEA_DETAIL({commit},contentId){
+        const response = await fetchSeaDetail(contentId)
+            commit('SET_SEA_DETAIL',response.data);
+            return response;
     }
 }
